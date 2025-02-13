@@ -1,0 +1,29 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem 0;
+  }
+
+  li a {
+    font-weight: 600;
+    color: $text-dark;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
