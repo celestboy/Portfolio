@@ -1,7 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 
-const Navbar = () => {
+interface NavbarProps {
+  opacity: MotionValue<number>;
+}
+
+const Navbar = ({ opacity }: NavbarProps) => {
   const menuItems = [
     { label: "À propos", target: "about" },
     { label: "Compétences", target: "compétences" },
@@ -22,10 +26,11 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="navbar"
+      style={{ opacity }}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
+      className="navbar"
     >
       <ul>
         {menuItems.map((item) => (

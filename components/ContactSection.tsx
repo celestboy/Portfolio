@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const ContactSection = () => {
@@ -13,20 +13,21 @@ const ContactSection = () => {
   const [copied, setCopied] = useState(false);
 
   const copierTexte = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    const texte = (e.target as HTMLParagraphElement).innerText; 
-    
+    const texte = (e.target as HTMLParagraphElement).innerText;
     navigator.clipboard.writeText(texte).then(() => {
       setCopied(true);
-      
       setTimeout(() => setCopied(false), 2000);
     });
-  }
+  };
 
   return (
     <section id="contact" className="contact">
       <h2>Travaillons ensemble</h2>
       <p>N'hésitez pas à me contacter</p>
-      <p id="mail" onClick={copierTexte} title="copier">celestin.godefroy@gmail.com</p>
+      <p id="mail" onClick={copierTexte} title="copier">
+        celestin.godefroy@gmail.com
+      </p>
+      {copied && <p className="text-green-500 text-sm mt-2">Email copié !</p>}
       <div className="social-icons">
         {socialLinks.map(({ Icon, link }) => (
           <motion.a

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const CV = () => {
   return (
@@ -6,10 +7,12 @@ const CV = () => {
       {/* Mobile Version */}
       <div className="w-full grid grid-rows-[auto,auto,1fr] grid-cols-10 md:hidden">
         <div className="row-span-2 col-span-4 bg-gradient-to-br from-blue-900 to-indigo-900 flex items-center justify-center h-40">
-          <img
+          <Image
             className="w-28 h-28 rounded-full object-cover border-4 border-gray-300 shadow-lg"
             src="/images/photo-perso.jpg"
             alt="photo personnelle"
+            width={112}
+            height={112}
           />
         </div>
 
@@ -131,10 +134,12 @@ const CV = () => {
           <div className="w-full h-full flex">
             <div className="w-[40%] flex flex-col justify-center items-center border-r border-gray-200 pr-6">
               <div className="relative">
-                <img
+                <Image
                   className="w-40 h-40 rounded-full object-cover border-4 border-blue-900 shadow-lg mb-4"
                   src="/images/photo-perso.jpg"
                   alt="photo personnelle"
+                  width={160}
+                  height={160}
                 />
                 <div className="absolute bottom-0 right-0 bg-blue-900 text-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-bold">
                   Dev
@@ -219,10 +224,7 @@ const CV = () => {
         </div>
       </div>
 
-      <a
-        href="../../../"
-        className="retour_bouton"
-      >
+      <a href="../../../" className="retour_bouton">
         Retour
       </a>
     </div>

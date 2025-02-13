@@ -14,10 +14,10 @@ export default function Home() {
   return (
     <html lang="fr">
       <body>
-        <Navbar />
+        <Navbar opacity={navbarOpacity} />
 
         <main>
-          <Header /> {/* Modifié ici */}
+          <Header />
           <SkillsSection />
           <ProjectsSection />
           <ContactSection />
