@@ -23,7 +23,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contact">
       <h2>Travaillons ensemble</h2>
-      <p>N'hésitez pas à me contacter</p>
+      <p>N&apos;hésitez pas à me contacter</p>
       <p id="mail" onClick={copierTexte} title="copier">
         celestin.godefroy@gmail.com
       </p>

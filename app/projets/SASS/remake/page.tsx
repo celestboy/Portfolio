@@ -168,7 +168,7 @@ const IntegrationPage: React.FC = () => {
                 <Image
                   className="main__section1__articles__article__img"
                   src="/items/SASS/chien.png"
-                  alt="chien disponible à l&apos;adoption"
+                  alt="chien disponible à l'adoption"
                   width={600}
                   height={400}
                 />
@@ -365,7 +365,7 @@ const IntegrationPage: React.FC = () => {
       <footer className="footer">
         <section className="footer__section1">
           <h2 className="footer__section1__title">
-            Register now so you don't miss our programs
+            Register now so you don&apos;t miss our programs
           </h2>
 
           <div className="footer__section1__searchbar">

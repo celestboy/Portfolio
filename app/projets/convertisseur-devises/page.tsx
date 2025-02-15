@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExchangeAlt,
@@ -23,7 +23,7 @@ const CurrencyConverter: React.FC = () => {
 
   const apiKey = "cb292f1e4400e868b1c08c85";
 
-  const fetchExchangeRate = async () => {
+  const fetchExchangeRate = useCallback(async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
@@ -47,7 +47,7 @@ const CurrencyConverter: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [amount, fromCurrency, toCurrency, apiKey]);
 
   useEffect(() => {
     fetchCurrencies();
@@ -61,7 +61,7 @@ const CurrencyConverter: React.FC = () => {
       setExchangeRate(0);
       setLastUpdate("--");
     }
-  }, [amount, fromCurrency, toCurrency]);
+  }, [amount, fromCurrency, toCurrency, fetchExchangeRate]);
 
   const fetchCurrencies = async () => {
     try {

@@ -1,16 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
-  school: string[],
+  school: string[];
   url: string;
   image: string;
 }
 
 const ProjectsSection = () => {
+  const router = useRouter();
+
   const projects: Project[] = [
     {
       title: "Remake SASS",
@@ -20,22 +24,6 @@ const ProjectsSection = () => {
       url: "/projets/SASS/remake",
       image: "/images/preview/remake-sass.png",
     },
-    // {
-    //   title: "Remake Tesla",
-    //   description: "Un remake inspiré du site Tesla, réalisé en HTML et SASS.",
-    //   technologies: ["HTML", "CS", "JS"],
-    //   school: ["perso", "ancien"],
-    //   url: "/projets/anciens_remakes/tesla",
-    //   image: "/images/preview/remake_tesla.png",
-    // },
-    // {
-    //   title: "Remake Macdo",
-    //   description: "Un remake inspiré du site de Macdo",
-    //   technologies: ["HTML", "CSS"],
-    //   school: ["perso", "ancien"],
-    //   url: "/projets/anciens_remakes/mcdo",
-    //   image: "/images/preview/remake_mcdo.png",
-    // },
     {
       title: "Tailwindcss | CV - Carte de visite",
       description:
@@ -48,7 +36,7 @@ const ProjectsSection = () => {
     {
       title: "Tailwindcss | Mock debate",
       description:
-        "Un projet Tailwindcss illustrant un comparaison entre 2 véhicules",
+        "Un projet Tailwindcss illustrant une comparaison entre 2 véhicules",
       technologies: ["HTML", "Tailwindcss"],
       school: ["école"],
       url: "/projets/tailwindcss/mock-debate",
@@ -61,14 +49,6 @@ const ProjectsSection = () => {
       school: ["école"],
       url: "/projets/SASS/mixin-variables",
       image: "/images/preview/mixin-variables.png",
-    },
-    {
-      title: "SASS | Carte format portrait",
-      description: "Premier projet SASS (découverte)",
-      technologies: ["HTML", "SASS"],
-      school: ["école"],
-      url: "/projets/SASS/carte",
-      image: "/images/preview/carte.png",
     },
     {
       title: "Convertisseur de devises",
@@ -115,7 +95,13 @@ const ProjectsSection = () => {
             onClick={() => handleProjectClick(project)}
           >
             <div className="project-image">
-              <img src={project.image} alt={project.title} />
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={300}
+                height={200}
+                layout="responsive"
+              />
             </div>
             <div className="project-content">
               <h3>{project.title}</h3>

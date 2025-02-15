@@ -1,5 +1,6 @@
 "use client";
 import { Code2, Globe, Wrench, Library, Server } from "lucide-react";
+import Image from "next/image";
 
 const SkillsSection = () => {
   const domains = [
@@ -93,7 +94,7 @@ const SkillsSection = () => {
         {
           name: "API REST",
           level: 80,
-          logo: "./images/rest-api.png",
+          logo: "/images/rest-api.png", // Assuming a local image
         },
       ],
     },
@@ -130,8 +131,8 @@ const SkillsSection = () => {
           name: "Claude.ia",
           logo: "https://cdn.brandfetch.io/claude.ai/logo.svg",
         },
-        { name: "Deepseek", logo: "./images/deepseek.jpg" },
-        { name: "Bolt", logo: "./images/bolt.jpg" },
+        { name: "Deepseek", logo: "/images/deepseek.jpg" },
+        { name: "Bolt", logo: "/images/bolt.jpg" },
       ],
     },
   ];
@@ -155,10 +156,12 @@ const SkillsSection = () => {
               {domain.skills.map((skill) => (
                 <div key={skill.name} className="skill-row">
                   <div className="skill-info">
-                    <img
+                    <Image
                       src={skill.logo}
                       alt={skill.name}
                       className="skill-logo"
+                      width={40}
+                      height={40}
                     />
                     <span className="skill-name">{skill.name}</span>
                     {"level" in skill && (
