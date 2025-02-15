@@ -53,7 +53,7 @@ const CV = () => {
           </div>
 
           <h3 className="mt-6 mb-3 text-xl font-bold border-b-2 border-gray-700 pb-2">
-            Centres d'intérêts
+            Centres d&apos;intérêts
           </h3>
           <ul className="space-y-2 text-sm">
             <li>💻 Programmation</li>
@@ -102,7 +102,7 @@ const CV = () => {
                 Équipier polyvalent
               </h3>
               <p className="text-sm text-gray-600">
-                CDD du 20 juin au 1er septembre 2024 | McDonald's
+                CDD du 20 juin au 1er septembre 2024 | McDonald&apos;s
               </p>
             </div>
 
@@ -120,7 +120,7 @@ const CV = () => {
                 Équipier polyvalent
               </h3>
               <p className="text-sm text-gray-600">
-                CDI du 6 janvier au 25 juin 2023 | McDonald's
+                CDI du 6 janvier au 25 juin 2023 | McDonald&apos;s
               </p>
             </div>
           </div>

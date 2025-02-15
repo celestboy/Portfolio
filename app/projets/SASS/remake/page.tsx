@@ -2,6 +2,7 @@
 
 
 import React, { useState } from "react";
+import Image from "next/image";
 import "/styles/items/SASS/remake/style.css";
 
 const IntegrationPage: React.FC = () => {
@@ -19,7 +20,12 @@ const IntegrationPage: React.FC = () => {
 
       <header className="header">
         <nav className="header__nav">
-          <img src="/items/SASS/logo-remake.svg" alt="" />
+          <Image
+            src="/items/SASS/logo-remake.svg"
+            alt="Remake logo"
+            width={100}
+            height={100}
+          />
           <button className="header__nav__burger" onClick={handleBurgerClick}>
             <span className="header__nav__burger--bar"></span>
             <span className="header__nav__burger--bar"></span>
@@ -115,10 +121,13 @@ const IntegrationPage: React.FC = () => {
           </div>
         </section>
 
-        <img
-          className="/items/SASS/header__image"
+        <Image
+          className="main__section2__img"
           src="/items/SASS/header-image.png"
-          alt="image de page principale"
+          alt="Main header image"
+          width={1200}
+          height={600}
+          layout="responsive"
         />
       </header>
 
@@ -156,10 +165,12 @@ const IntegrationPage: React.FC = () => {
                 key={index}
                 className="main__section1__articles__article"
               >
-                <img
+                <Image
                   className="main__section1__articles__article__img"
                   src="/items/SASS/chien.png"
-                  alt="chien disponible à l'adoption"
+                  alt="chien disponible à l&apos;adoption"
+                  width={600}
+                  height={400}
                 />
                 <h3 className="main__section1__articles__article__title">
                   MO231 - Pomeranian White
@@ -238,10 +249,13 @@ const IntegrationPage: React.FC = () => {
             </div>
           </div>
 
-          <img
+          <Image
             className="main__section2__img"
             src="/items/SASS/section2-image.png"
             alt="//"
+            width={600}
+            height={400}
+            layout="intrinsic"
           />
         </section>
 
@@ -275,10 +289,13 @@ const IntegrationPage: React.FC = () => {
 
         <section className="main__section3">
           <article className="main__section3__article">
-            <img
+            <Image
               className="main__section3__article__img"
               src="/items/SASS/chien3.png"
               alt="//"
+              width={600}
+              height={400}
+              layout="intrinsic"
             />
 
             <span className="main__section3__article__span">Pet knowledge</span>
@@ -296,10 +313,13 @@ const IntegrationPage: React.FC = () => {
           </article>
 
           <article className="main__section3__article">
-            <img
+            <Image
               className="main__section3__article__img"
               src="/items/SASS/chien3.png"
               alt="//"
+              width={600}
+              height={400}
+              layout="intrinsic"
             />
 
             <span className="main__section3__article__span">Pet knowledge</span>
@@ -317,10 +337,13 @@ const IntegrationPage: React.FC = () => {
           </article>
 
           <article className="main__section3__article">
-            <img
+            <Image
               className="main__section3__article__img"
               src="/items/SASS/chien3.png"
               alt="//"
+              width={600}
+              height={400}
+              layout="intrinsic"
             />
 
             <span className="main__section3__article__span">Pet knowledge</span>
@@ -460,7 +483,12 @@ const IntegrationPage: React.FC = () => {
             © 2022 Monito. All rights reserved.
           </p>
 
-          <img src="/items/SASS/logo-remake.svg" alt="" />
+          <Image
+            src="/items/SASS/logo-remake.svg"
+            alt="Remake logo"
+            width={100}
+            height={100}
+          />
 
           <div className="footer__section3__container">
             <p className="footer__section3__container__text1">

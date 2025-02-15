@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import SkillsSection from "../components/SkillsSection";

@@ -23,6 +23,32 @@ const CurrencyConverter: React.FC = () => {
 
   const apiKey = "cb292f1e4400e868b1c08c85";
 
+  const fetchExchangeRate = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`
+      );
+      const data = await response.json();
+      if (response.ok) {
+        setConvertedAmount(
+          new Intl.NumberFormat(undefined, {
+            style: "currency",
+            currency: toCurrency,
+          }).format(data.conversion_result)
+        );
+        setExchangeRate(data.conversion_rate);
+        setLastUpdate(new Date().toLocaleTimeString());
+      } else {
+        console.error("Error fetching exchange rate");
+      }
+    } catch (error) {
+      console.error("Error fetching exchange rate:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchCurrencies();
   }, []);
@@ -50,32 +76,6 @@ const CurrencyConverter: React.FC = () => {
       }
     } catch (error) {
       console.error("Error fetching currencies:", error);
-    }
-  };
-
-  const fetchExchangeRate = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(
-        `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`
-      );
-      const data = await response.json();
-      if (response.ok) {
-        setConvertedAmount(
-          new Intl.NumberFormat(undefined, {
-            style: "currency",
-            currency: toCurrency,
-          }).format(data.conversion_result)
-        );
-        setExchangeRate(data.conversion_rate);
-        setLastUpdate(new Date().toLocaleTimeString());
-      } else {
-        console.error("Error fetching exchange rate");
-      }
-    } catch (error) {
-      console.error("Error fetching exchange rate:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 

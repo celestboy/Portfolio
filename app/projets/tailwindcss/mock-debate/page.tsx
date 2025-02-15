@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 const VehiclePage: React.FC = () => {
@@ -45,11 +46,19 @@ const VehiclePage: React.FC = () => {
           isLargeScreen || isVehicle1Visible ? "" : "hidden"
         }`}
       >
-        <img
-          className="h-1/3 mt-16 md:mt-24"
-          src="/items/tailwindcss/yamaha-R1.png"
-          alt="Yamaha R1"
-        />
+        <div className="w-full h-1/2 flex justify-center items-center m-10">
+          <div className="w-[200px] h-[200px] relative overflow-hidden">
+            <Image
+              src="/items/tailwindcss/yamaha-R1.png"
+              alt="Yamaha R1"
+              layout="intrinsic"
+              width={300}
+              height={300}
+              className="object-contain"
+            />
+          </div>
+        </div>
+
         <h2 className="text-[3vh] text-black font-bold mt-[1.5vh]">
           Yamaha R1 2024
         </h2>
@@ -104,11 +113,19 @@ const VehiclePage: React.FC = () => {
           isLargeScreen || !isVehicle1Visible ? "" : "hidden"
         }`}
       >
-        <img
-          className="h-1/3 mt-16 md:mt-24"
-          src="/items/tailwindcss/URUS.png"
-          alt="Lamborghini URUS"
-        />
+        <div className="w-full h-1/2 flex justify-center items-center m-10">
+          <div className="w-[200px] h-[200px] relative overflow-hidden">
+            <Image
+              src="/items/tailwindcss/URUS.png"
+              alt="Lamborghini URUS"
+              layout="intrinsic"
+              width={350}
+              height={350}
+              className="object-contain"
+            />
+          </div>
+        </div>
+
         <h2 className="text-[3vh] text-yellow-100 font-bold mt-[1.5vh]">
           Lamborghini URUS 2024
         </h2>
@@ -140,7 +157,7 @@ const VehiclePage: React.FC = () => {
             </button>
             <button
               onClick={() => audioURUSRef.current?.pause()}
-              className="text-indigo-300 m-2 p-1 border rounded-xl"
+              className="text-indigo-600 m-2 p-1 border rounded-xl"
             >
               Pause
             </button>
@@ -152,7 +169,7 @@ const VehiclePage: React.FC = () => {
       {!isLargeScreen && (
         <button
           id="boutonChange"
-          className="absolute bottom-10 px-4 p-2 bg-gray-800 text-white rounded lg:hidden"
+          className="absolute mt-20 px-4 p-2 bg-gray-800 text-white rounded lg:hidden"
           onClick={handleSwitchVehicle}
         >
           Switch

@@ -20,22 +20,22 @@ const ProjectsSection = () => {
       url: "/projets/SASS/remake",
       image: "/images/preview/remake-sass.png",
     },
-    {
-      title: "Remake Tesla",
-      description: "Un remake inspiré du site Tesla, réalisé en HTML et SASS.",
-      technologies: ["HTML", "CS", "JS"],
-      school: ["perso", "ancien"],
-      url: "/projets/anciens_remakes/tesla",
-      image: "/images/preview/remake_tesla.png",
-    },
-    {
-      title: "Remake Macdo",
-      description: "Un remake inspiré du site de Macdo",
-      technologies: ["HTML", "CSS"],
-      school: ["perso", "ancien"],
-      url: "/projets/anciens_remakes/mcdo",
-      image: "/images/preview/remake_mcdo.png",
-    },
+    // {
+    //   title: "Remake Tesla",
+    //   description: "Un remake inspiré du site Tesla, réalisé en HTML et SASS.",
+    //   technologies: ["HTML", "CS", "JS"],
+    //   school: ["perso", "ancien"],
+    //   url: "/projets/anciens_remakes/tesla",
+    //   image: "/images/preview/remake_tesla.png",
+    // },
+    // {
+    //   title: "Remake Macdo",
+    //   description: "Un remake inspiré du site de Macdo",
+    //   technologies: ["HTML", "CSS"],
+    //   school: ["perso", "ancien"],
+    //   url: "/projets/anciens_remakes/mcdo",
+    //   image: "/images/preview/remake_mcdo.png",
+    // },
     {
       title: "Tailwindcss | CV - Carte de visite",
       description:
