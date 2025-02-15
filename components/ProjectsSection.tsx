@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 interface Project {
   title: string;
@@ -13,8 +12,6 @@ interface Project {
 }
 
 const ProjectsSection = () => {
-  const router = useRouter();
-
   const projects: Project[] = [
     {
       title: "Remake SASS",
@@ -100,7 +97,6 @@ const ProjectsSection = () => {
                 alt={project.title}
                 width={300}
                 height={200}
-                layout="responsive"
               />
             </div>
             <div className="project-content">
@@ -110,13 +106,6 @@ const ProjectsSection = () => {
                 {project.technologies.map((tech, idx) => (
                   <span key={idx} className="tech-tag">
                     {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="project-school">
-                {project.school.map((school, idx) => (
-                  <span key={idx} className="school-tag">
-                    {school}
                   </span>
                 ))}
               </div>
